@@ -1,0 +1,16 @@
+El código fuente se encuentra en `src/`, las bibliotecas compartidas en `shobj/`
+y los ejecutables en `bin`.
+
+Compilar con el comando `make`.
+
+Correr con el comando `./bin/main [archivo de disco]`
+
+
+//FUNCION de testeo!!!!
+para testear y ver el estado del sistema de archivos, usar la funcion test_estructuras()
+
+
+ para la funcion file_read() usar un buffer con memoria dinamica, dicho buffer con 'size' de tamanio(buffer[size]):
+
+Por ejemplo: buffer_rw = malloc(n);
+			file_read(fd, buffer_rw, n);

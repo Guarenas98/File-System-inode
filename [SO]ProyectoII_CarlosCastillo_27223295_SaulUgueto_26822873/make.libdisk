@@ -1,0 +1,22 @@
+# options and such
+CC     = gcc
+OPTS   = -Wall -fpic
+INCS   = 
+LIBS   = 
+
+# files we need
+SRCS   = src/libdisk.c 
+OBJS   = obj/libdisk.o
+TARGET = shobj/libdisk.so
+
+all: $(TARGET)
+
+clean:
+	rm -f $(TARGET) $(OBJS)
+
+$(OBJS): $(SRCS)
+	$(CC) $(INCS) $(OPTS) -c $< -o $@
+
+$(TARGET): $(OBJS)
+	$(CC) -shared -o $(TARGET) $(OBJS) $(LIBS)
+

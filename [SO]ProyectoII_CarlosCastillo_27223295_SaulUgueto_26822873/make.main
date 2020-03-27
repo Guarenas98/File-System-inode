@@ -1,0 +1,22 @@
+# options and such
+CC     = gcc
+OPTS   = -O -Wall 
+INCS   = 
+LIBS   = -Wl,-L./shobj,-rpath=./shobj -lfs -ldisk
+
+# files we need
+SRCS   = src/main.c 
+OBJS   = obj/main.o
+TARGET = bin/main
+
+all: $(TARGET)
+
+clean:
+	rm -f $(TARGET) $(OBJS)
+
+$(OBJS): $(SRCS)
+	$(CC) $(INCS) $(OPTS) -c $< -o $@
+
+$(TARGET): $(OBJS)
+	$(CC) -o $(TARGET) $(OBJS) $(LIBS)
+
